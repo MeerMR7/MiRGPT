@@ -1,0 +1,6 @@
+streamlit
+pdfplumber
+requests
+# Optional: if you decide to use the FAISS version later
+# faiss-cpu
+# sentence-transformers
