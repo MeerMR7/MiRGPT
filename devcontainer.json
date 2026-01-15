@@ -1,11 +1,26 @@
 {
-    "name": "MiRGPT",
+    "name": "Project-Greenwich-Navigator",
     "image": "mcr.microsoft.com/devcontainers/python:3.11",
     "customizations": {
         "vscode": {
-            "extensions": ["ms-python.python"]
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python"
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-python.debugpy",
+                "bungyip.streamlit-python-util"
+            ]
         }
     },
     "forwardPorts": [8501],
-    "postCreateCommand": "pip install -r requirements.txt"
+    "postCreateCommand": "pip install --upgrade pip && pip install -r requirements.txt",
+    "portsAttributes": {
+        "8501": {
+            "label": "Greenwich App Port",
+            "onAutoForward": "openPreview"
+        }
+    },
+    "remoteUser": "vscode"
 }
